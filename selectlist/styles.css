@@ -1,0 +1,200 @@
+:root {
+    --border-radius: 8px;
+    --padding: 24px;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    color: CanvasText;
+    background-color: Canvas;
+    font-family: sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: CanvasText;
+}
+
+.caption {
+    font-size: 1.5em;
+    color: CanvasText;
+}
+
+.group .caption {
+    margin-bottom: calc(var(--padding) * 1);
+}
+main {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.row {
+    display: flex;
+    gap: 0;
+}
+.flex {
+    flex: 1;
+}
+
+#toc {
+    padding: var(--padding);
+    width: 320px;
+    background: #eee;
+    font-size: 1.5em;
+}
+#toc .title {
+    margin-bottom: 10px;
+}
+#toc a {
+    padding: 4px 0;
+    display: block;
+}
+
+#content {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.google-symbols {
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 48;
+}
+
+.group {
+    min-height: 420px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.light,
+.dark {
+    padding: var(--padding);
+}
+
+.light {
+    color-scheme: light;
+    background-color: white;
+}
+
+.dark {
+    color-scheme: dark;
+    background: black;
+}
+
+.light .my-custom-select option:hover:not([disabled]) {
+    background-color: rgba(179, 215, 255, 0.5);
+}
+
+.dark .my-custom-select option:hover:not([disabled]) {
+    background-color: #618cbe;
+    color: #111;
+}
+
+.dark .my-custom-select option:checked {
+    color: #111;
+}
+
+.my-custom-select {
+    font-size: 1em;
+    line-height: 1em;
+    margin-right: calc(var(--padding) / 2);
+    margin-bottom: calc(var(--padding) / 2);
+}
+
+.my-custom-select::part(button) {
+    border: 1px solid buttonBorder;
+    padding: 5px 8px 5px 16px;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    display: flex;
+    background: field;
+    color: fieldText;
+    justify-content: center;
+}
+
+.my-custom-select::part(selectedoption) {
+    align-self: center;
+}
+
+.my-custom-select::part(legend) {
+    color: blue;
+    display: block;
+    opacity: 1;
+    font-size: 100em;
+}
+
+.my-custom-select::part(marker) {
+    width: 24px;
+    height: 24px;
+    align-self: center;
+    background-size: cover;
+    background-image: url(arrow_drop_down.svg);
+}
+.dark .my-custom-select::part(marker) {
+    background-image: url(arrow_drop_down_white.svg);
+}
+
+.my-custom-select listbox,
+.my-custom-select::part(listbox) {
+    background-color: Field;
+    border-radius: var(--border-radius);
+    padding: 8px 0;
+    border: none;
+}
+
+.dark .my-custom-select listbox,
+.dark .my-custom-select::part(listbox) {
+    box-shadow:
+        0 0 2px rgba(0, 0, 0, 0.25),
+        0 0 12px rgba(0, 0, 0, 0.35);
+}
+
+.my-custom-select option {
+    font-size: 1em;
+    line-height: 1em;
+    padding: 12px 16px;
+}
+
+.my-custom-select option:checked {
+    background: selectedItem;
+    color: SelectedItemText;
+}
+
+/* optgroup */
+.my-custom-select header {
+    padding: 12px 16px;
+    font-weight: bold;
+}
+
+.my-custom-select .section {
+    margin-bottom: 8px;
+}
+.my-custom-select .section:last-child {
+    margin-bottom: 0;
+}
+.my-custom-select .section option {
+    padding: 12px 32px;
+}
+
+@media (prefers-color-scheme: dark) {
+    /* :root { color: purple } */
+}

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Open UI</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <main class="row">
+        <div id="toc" class="caption">
+            <div class="title">&lt;selectlist&gt;</div>
+            <a href="#desktop-default">Desktop ⁄ Default</a>
+            <a href="#desktop-optgroup">Desktop ⁄ Optgroup</a>
+            <a href="#mobile-default">Mobile ⁄ Default</a>
+            <a href="#chrome-default">Chrome ⁄ Default</a>
+        </div>
+        <div id="content" class="flex">
+            <div class="row group" id="desktop-default">
+                <div class="light flex">
+                    <div class="caption">Desktop ⁄ Default ⁄ Light</div>
+
+                    <selectlist class="vertical-align my-custom-select">
+                        <option value="Aubergine">Aubergine</option>
+                        <option value="Courgette">Courgette</option>
+                        <option value="Carrot">Carrot</option>
+                        <option value="Leek">Leek</option>
+                        <option value="Broccoli" selected>Broccoli</option>
+                    </selectlist>
+
+                    <selectlist class="my-custom-select">
+                        <option value="Emperor Penguin">
+                            Emperor Penguin
+                        </option>
+                        <option value="Eastern Lowland Gorilla" selected>
+                            Eastern Lowland Gorilla
+                        </option>
+                        <option value="Killer Whale">Killer Whale</option>
+                        <option value="Crocodile">Crocodile</option>
+                        <option value="Bengal Tiger" disabled>
+                            Bengal Tiger
+                        </option>
+                        <option value="Komodo Dragon">Komodo Dragon</option>
+                    </selectlist>
+
+                    <selectlist class="my-custom-select">
+                        <option value="Green">Green</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Gold" disabled>Gold</option>
+                        <option value="Silver" disabled>Silver</option>
+                        <option value="Pink">Pink</option>
+                        <option value="Purple" selected>Purple</option>
+                        <option value="Black">Black</option>
+                    </selectlist>
+                </div>
+                <div class="dark flex">
+                    <div class="caption">Desktop ⁄ Default ⁄ Dark</div>
+
+                    <selectlist class="my-custom-select">
+                        <option value="Aubergine">Aubergine</option>
+                        <option value="Courgette">Courgette</option>
+                        <option value="Carrot">Carrot</option>
+                        <option value="Leek">Leek</option>
+                        <option value="Broccoli" selected>Broccoli</option>
+                    </selectlist>
+
+                    <selectlist class="my-custom-select">
+                        <option value="Emperor Penguin">
+                            Emperor Penguin
+                        </option>
+                        <option value="Eastern Lowland Gorilla" selected>
+                            Eastern Lowland Gorilla
+                        </option>
+                        <option value="Killer Whale">Killer Whale</option>
+                        <option value="Crocodile">Crocodile</option>
+                        <option value="Bengal Tiger" disabled>
+                            Bengal Tiger
+                        </option>
+                        <option value="Komodo Dragon">Komodo Dragon</option>
+                    </selectlist>
+
+                    <selectlist class="my-custom-select">
+                        <option value="Green">Green</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Gold" disabled>Gold</option>
+                        <option value="Silver" disabled>Silver</option>
+                        <option value="Pink">Pink</option>
+                        <option value="Purple" selected>Purple</option>
+                        <option value="Black">Black</option>
+                    </selectlist>
+                </div>
+            </div>
+            <div class="row group" id="desktop-optgroup">
+                <div class="light flex">
+                    <div class="caption">Desktop ⁄ Optgroup ⁄ Light</div>
+
+                    <selectlist class="my-custom-select">
+                        <listbox>
+                            <header>Clothing</header>
+                            <div class="section">
+                                <option value="Outerwear">Outerwear</option>
+                                <option value="Jumpsuits">Jumpsuits</option>
+                                <option value="Jeans" disabled>Jeans</option>
+                            </div>
+                            <header>Accessories</header>
+                            <div class="section">
+                                <option value="Scarves" selected>
+                                    Scarves
+                                </option>
+                                <option value="Jewellery">Jewellery</option>
+                                <option value="Eyewear">Eyewear</option>
+                            </div>
+                            <listbox>
+                    </selectlist>
+                </div>
+                <div class="dark flex">
+                    <div class="caption">Desktop ⁄ Optgroup ⁄ Dark</div>
+
+                    <selectlist class="my-custom-select">
+                        <listbox>
+                            <header>Clothing</header>
+                            <div class="section">
+                                <option value="Outerwear">Outerwear</option>
+                                <option value="Jumpsuits">Jumpsuits</option>
+                                <option value="Jeans" disabled>Jeans</option>
+                            </div>
+                            <header>Accessories</header>
+                            <div class="section">
+                                <option value="Scarves" selected>
+                                    Scarves
+                                </option>
+                                <option value="Jewellery">Jewellery</option>
+                                <option value="Eyewear">Eyewear</option>
+                            </div>
+                            <listbox>
+                    </selectlist>
+                </div>
+            </div>
+            <div class="row group" id="mobile-default">
+                <div class="light flex">
+                    <div class="caption">Mobile ⁄ Default ⁄ Light</div>
+                </div>
+                <div class="dark flex">
+                    <div class="caption">Mobile ⁄ Default ⁄ Dark</div>
+                </div>
+            </div>
+            <div class="row group" id="chrome-default">
+                <div class="light flex">
+                    <div class="caption">Chrome ⁄ Default ⁄ Light</div>
+                </div>
+                <div class="dark flex">
+                    <div class="caption">Chrome ⁄ Default ⁄ Dark</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
