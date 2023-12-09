@@ -3,6 +3,9 @@
     --border-radius: 8px;
     --padding: 24px;
     --gap: 8px;
+    --color-hover-light: rgba(179, 215, 255, 0.5);
+    --color-hover-dark: #618cbe;
+    /* --selected-item-text: #111; */
 }
 
 body,
@@ -19,6 +22,14 @@ body {
 
 * {
     box-sizing: border-box;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        "FILL" 1,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
 }
 
 a {
@@ -55,7 +66,7 @@ main {
 
 #toc {
     padding: var(--padding);
-    width: 240px;
+    width: 192px;
     background: #eee;
     font-size: 1.5em;
 }
@@ -80,17 +91,20 @@ main {
 }
 
 .group {
-    min-height: 320px;
+    min-height: 480px;
 }
 
 .title {
     font-weight: bold;
 }
 
+.demo {
+}
+
 .toolbar {
     display: flex;
     gap: var(--gap);
-    margin-top: 40px;
+    margin-top: 16px;
 }
 
 .light,
@@ -109,11 +123,11 @@ main {
 }
 
 .light .my-custom-select option:hover:not([disabled]) {
-    background-color: rgba(179, 215, 255, 0.5);
+    background-color: var(--color-hover-light);
 }
 
 .dark .my-custom-select option:hover:not([disabled]) {
-    background-color: #618cbe;
+    background-color: var(--color-hover-dark);
     color: #111;
 }
 
@@ -126,52 +140,59 @@ main {
     line-height: 1em;
 }
 
-.my-custom-select::part(button) {
-    border: 1px solid buttonBorder;
-    padding: 5px 8px 5px 16px;
-    border-radius: var(--border-radius);
+.my-custom-select::part(button),
+.my-custom-select button {
+    padding: 7px 8px 7px 16px;
     font-size: 1em;
+    line-height: 1em;
     display: flex;
     background: field;
-    color: fieldText;
-    justify-content: center;
-    white-space: nowrap;
     cursor: pointer;
+    white-space: nowrap;
 }
-.option-a .my-custom-select::part(button) {
+.option-a .my-custom-select::part(button),
+.option-a .my-custom-select button {
     border-radius: var(--border-radius-option-a);
 }
 
-.outline.option-b .dark .my-custom-select::part(button),
-.outline.option-a .dark .my-custom-select::part(button) {
+.option-b .my-custom-select::part(button),
+.option-b .my-custom-select button {
+    border-radius: var(--border-radius);
+}
+
+.outline .my-custom-select::part(button),
+.outline .my-custom-select button {
+    border: 1px solid buttonBorder;
     background: none;
 }
 
-.fill .my-custom-select::part(button) {
-    border: none;
+.fill .my-custom-select::part(button),
+.fill .my-custom-select button {
+    border: 1px solid buttonFace;
     background: buttonFace;
 }
 
-.my-custom-select::part(selectedoption) {
+.my-custom-select::part(selectedoption),
+.my-custom-select selectedoption {
     align-self: center;
+    align-items: center;
+    display: flex;
+    gap: var(--gap);
 }
 
-.my-custom-select::part(legend) {
-    color: blue;
-    display: block;
-    opacity: 1;
-    font-size: 100em;
-}
-
-.my-custom-select::part(marker) {
+.my-custom-select::part(marker),
+.my-custom-select marker {
     width: 24px;
     height: 24px;
+    margin-left: var(--gap);
     align-self: center;
     background-size: cover;
     background-image: url(arrow_drop_down.svg);
+    background-position: center center;
 }
 
-.dark .my-custom-select::part(marker) {
+.dark .my-custom-select::part(marker),
+.dark .my-custom-select marker {
     background-image: url(arrow_drop_down_white.svg);
 }
 .my-custom-select:open::part(marker) {
@@ -196,8 +217,11 @@ main {
 .my-custom-select option {
     font-size: 1em;
     line-height: 1em;
-    padding: 12px 16px;
+    padding: 11px 16px;
     cursor: pointer;
+    align-items: center;
+    display: flex;
+    gap: var(--gap);
 }
 
 .my-custom-select option:checked {
@@ -209,16 +233,23 @@ main {
 .my-custom-select header {
     padding: 12px 16px;
     font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    /* color: grayText; */
 }
 
-.my-custom-select .section {
-    margin-bottom: 8px;
-}
 .my-custom-select .section:last-child {
     margin-bottom: 0;
 }
 .my-custom-select .section option {
     padding: 12px 32px;
+}
+
+.my-custom-select.optgroup listbox {
+    padding: 4px 0;
+}
+.my-custom-select.optgroup .section {
+    margin-bottom: 4px;
 }
 
 @media (prefers-color-scheme: dark) {
