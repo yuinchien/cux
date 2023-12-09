@@ -110,7 +110,7 @@ main {
 .toolbar {
     display: flex;
     gap: var(--gap);
-    margin-top: 16px;
+    margin-top: var(--gap);
 }
 
 .light,
@@ -250,6 +250,22 @@ main {
 .my-custom-select header:not(:first-child) {
     /* border-top: 1px solid buttonBorder; */
     margin-top: 2px;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    margin-right: 4px;
+}
+.dot.green {
+    background-color: limegreen;
+}
+.dot.red {
+    background-color: orangered;
+}
+.dot.gray {
+    background-color: grayText;
 }
 
 @media (prefers-color-scheme: dark) {
