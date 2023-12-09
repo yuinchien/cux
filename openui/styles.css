@@ -191,7 +191,7 @@ main {
 .my-custom-select marker {
     width: 24px;
     height: 24px;
-    margin-left: var(--gap);
+    margin-left: calc(var(--gap) / 2);
     align-self: center;
     background-size: cover;
     background-image: url(arrow_drop_down.svg);
