@@ -13,7 +13,7 @@ const PARAMS = {
     height: 40,
   },
   preview: {
-    examples: "all",
+    example: "all",
   },
 };
 
@@ -23,7 +23,7 @@ const folderContent = pane.addFolder({
   title: "preview",
 });
 folderContent
-  .addBinding(PARAMS.preview, "examples", {
+  .addBinding(PARAMS.preview, "example", {
     options: {
       all: "all",
       toolbar: "toolbar",
@@ -38,7 +38,7 @@ folderContent
 
 folderContent
   .addButton({
-    label: "Option A",
+    label: "option A",
     title: "H 40/R 20/R 8",
   })
   .on("click", () => {
@@ -50,7 +50,7 @@ folderContent
   });
 folderContent
   .addButton({
-    label: "Option B",
+    label: "option B",
     title: "H 40/R 8/R 8",
   })
   .on("click", () => {

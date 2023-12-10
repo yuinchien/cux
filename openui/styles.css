@@ -54,14 +54,11 @@ p {
     margin-right: 2px;
 }
 .caption {
-    /* font-size: 0.8em; */
     color: CanvasText;
 }
 
 .group .caption {
     margin: 16px 0 16px 0;
-    /* border-top: 1px solid var(--color-border); */
-    /* margin: calc(var(--gap) * 2) 0; */
 }
 
 main {
@@ -166,7 +163,6 @@ main {
 .my-custom-select::part(button),
 .my-custom-select button {
     height: var(--button-height);
-    border-radius: var(--button-border-radius);
     padding: 0 8px 0 16px;
     font-size: 1em;
     line-height: 1em;
@@ -187,12 +183,14 @@ main {
 .outline .my-custom-select button {
     border: 1px solid var(--color-border);
     background: none;
+    border-radius: var(--button-border-radius);
 }
 
 .fill .my-custom-select::part(button),
 .fill .my-custom-select button {
     border: none;
     background: buttonFace;
+    border-radius: var(--button-border-radius);
 }
 
 .my-custom-select::part(selectedoption),
