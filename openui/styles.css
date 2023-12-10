@@ -125,7 +125,7 @@ main {
 }
 
 #raw .demo {
-    gap: 0;
+    column-gap: calc(var(--gap) * 2);
 }
 
 .light,
@@ -178,10 +178,10 @@ main {
     background: none;
 }
 
-/* .my-custom-select:open::part(button),
-.my-custom-select:open button {
-    background: field;
-} */
+#raw .my-custom-select::part(button),
+#raw .my-custom-select button {
+    padding: 0;
+}
 
 .outline .my-custom-select::part(button),
 .outline .my-custom-select button {
