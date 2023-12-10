@@ -1,5 +1,4 @@
 :root {
-    --border-radius-option-a: 20px;
     --border-radius: 8px;
     --padding: 24px;
     --gap: 8px;
@@ -7,7 +6,11 @@
     --color-hover-dark: #618cbe;
     --color-border: #ccc;
     --shadow-light: 0 0 4px rgba(0, 0, 0, 0.25);
-    /* --selected-item-text: #111; */
+    --button-height: 40px;
+    --button-border-radius: 20px;
+    --option-height: 40px;
+    --optgroup-indent: 8px;
+    --listbox-border-radius: 8px;
 }
 
 body,
@@ -44,6 +47,12 @@ p {
     color: grayText;
 }
 
+.emoji {
+    font-size: 1.25em;
+}
+.emoji.with-label {
+    margin-right: 2px;
+}
 .caption {
     font-size: 1.5em;
     color: CanvasText;
@@ -59,7 +68,7 @@ main {
     height: 100%;
 }
 
-.col {
+.column {
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -104,7 +113,6 @@ main {
 }
 
 .group {
-    min-height: 480px;
 }
 
 .title {
@@ -115,13 +123,10 @@ main {
     display: flex;
     flex-flow: row wrap;
     gap: var(--gap);
-    margin-top: var(--padding);
 }
 
-.toolbar {
-    display: flex;
-    gap: var(--gap);
-    margin-top: var(--gap);
+#raw .demo {
+    gap: 0;
 }
 
 .light,
@@ -161,7 +166,8 @@ main {
 
 .my-custom-select::part(button),
 .my-custom-select button {
-    padding: 7px 8px 7px 16px;
+    height: var(--button-height);
+    padding: 0 8px 0 16px;
     font-size: 1em;
     line-height: 1em;
     display: flex;
@@ -173,18 +179,13 @@ main {
 .my-custom-select:open::part(button),
 .my-custom-select:open button {
     background: field;
-    /* border: 1px solid field !important;
-    box-shadow: var(--shadow-light); */
 }
 
-.option-a .my-custom-select::part(button),
-.option-a .my-custom-select button {
-    border-radius: var(--border-radius-option-a);
-}
-
-.option-b .my-custom-select::part(button),
-.option-b .my-custom-select button {
-    border-radius: var(--border-radius);
+.my-custom-select::part(button),
+.my-custom-select button {
+    border: none;
+    background: none;
+    border-radius: var(--button-border-radius);
 }
 
 .outline .my-custom-select::part(button),
@@ -195,7 +196,7 @@ main {
 
 .fill .my-custom-select::part(button),
 .fill .my-custom-select button {
-    border: 1px solid buttonFace;
+    border: none;
     background: buttonFace;
 }
 
@@ -231,7 +232,7 @@ main {
 .my-custom-select::part(listbox),
 .my-custom-select listbox {
     background-color: Field;
-    border-radius: var(--border-radius);
+    border-radius: var(--listbox-border-radius);
     padding: 0;
     border: none;
     box-shadow: var(--shadow-light);
@@ -248,7 +249,8 @@ main {
 .my-custom-select option {
     font-size: 1em;
     line-height: 1em;
-    padding: 11px 16px;
+    height: var(--option-height);
+    padding: 0 16px;
     cursor: pointer;
     align-items: center;
     display: flex;
@@ -262,20 +264,17 @@ main {
 
 /* optgroup */
 .my-custom-select header {
-    padding: 12px 16px 7px 16px;
+    padding: 0 16px;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.6em;
     letter-spacing: 0.05em;
-    /* color: grayText; */
-}
-
-.my-custom-select header:not(:first-child) {
-    margin-top: 2px;
+    height: calc(var(--option-height) * 0.6);
+    margin-top: 16px;
 }
 
 .my-custom-select.optgroup option {
-    padding-left: 24px;
+    text-indent: var(--optgroup-indent);
 }
 
 .dot {
