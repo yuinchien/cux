@@ -38,7 +38,7 @@ folderContent
 
 folderContent
   .addButton({
-    label: "Suggest A",
+    label: "Option A",
     title: "H 40/R 20/R 8",
   })
   .on("click", () => {
@@ -50,7 +50,7 @@ folderContent
   });
 folderContent
   .addButton({
-    label: "Suggest B",
+    label: "Option B",
     title: "H 40/R 8/R 8",
   })
   .on("click", () => {
