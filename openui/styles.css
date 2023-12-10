@@ -5,6 +5,8 @@
     --gap: 8px;
     --color-hover-light: rgba(179, 215, 255, 0.5);
     --color-hover-dark: #618cbe;
+    --color-border: #ccc;
+    --shadow-light: 0 0 4px rgba(0, 0, 0, 0.25);
     /* --selected-item-text: #111; */
 }
 
@@ -37,13 +39,18 @@ a {
     color: CanvasText;
 }
 
+p {
+    margin: 4px 0;
+    color: grayText;
+}
+
 .caption {
     font-size: 1.5em;
     color: CanvasText;
 }
 
 .group .caption {
-    margin-bottom: calc(var(--padding) * 2);
+    /* margin-bottom: calc(var(--padding) * 2); */
 }
 
 main {
@@ -105,6 +112,10 @@ main {
 }
 
 .demo {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--gap);
+    margin-top: var(--padding);
 }
 
 .toolbar {
@@ -126,6 +137,8 @@ main {
 .dark {
     color-scheme: dark;
     background: black;
+
+    --color-border: #5a5a5a;
 }
 
 .light .my-custom-select option:hover:not([disabled]) {
@@ -157,6 +170,13 @@ main {
     white-space: nowrap;
 }
 
+.my-custom-select:open::part(button),
+.my-custom-select:open button {
+    background: field;
+    /* border: 1px solid field !important;
+    box-shadow: var(--shadow-light); */
+}
+
 .option-a .my-custom-select::part(button),
 .option-a .my-custom-select button {
     border-radius: var(--border-radius-option-a);
@@ -169,7 +189,7 @@ main {
 
 .outline .my-custom-select::part(button),
 .outline .my-custom-select button {
-    border: 1px solid buttonBorder;
+    border: 1px solid var(--color-border);
     background: none;
 }
 
@@ -203,20 +223,23 @@ main {
     background-image: url(arrow_drop_down_white.svg);
 }
 
-.my-custom-select:open::part(marker) {
+.my-custom-select:open::part(marker),
+.my-custom-select:open marker {
     transform: scaleY(-1);
 }
 
-.my-custom-select listbox,
-.my-custom-select::part(listbox) {
+.my-custom-select::part(listbox),
+.my-custom-select listbox {
     background-color: Field;
     border-radius: var(--border-radius);
     padding: 0;
     border: none;
+    box-shadow: var(--shadow-light);
+    z-index: 10000;
 }
 
-.dark .my-custom-select listbox,
-.dark .my-custom-select::part(listbox) {
+.dark .my-custom-select::part(listbox),
+.dark .my-custom-select listbox {
     box-shadow:
         0 0 2px rgba(0, 0, 0, 0.25),
         0 0 12px rgba(0, 0, 0, 0.35);
@@ -248,14 +271,17 @@ main {
 }
 
 .my-custom-select header:not(:first-child) {
-    /* border-top: 1px solid buttonBorder; */
     margin-top: 2px;
 }
 
+.my-custom-select.optgroup option {
+    padding-left: 24px;
+}
+
 .dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
     margin-right: 4px;
 }
 .dot.green {
@@ -266,10 +292,6 @@ main {
 }
 .dot.gray {
     background-color: grayText;
-}
-
-@media (prefers-color-scheme: dark) {
-    /* :root { color: purple } */
 }
 
 @media (max-width: 720px) {
