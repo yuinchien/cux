@@ -167,6 +167,7 @@ main {
 .my-custom-select::part(button),
 .my-custom-select button {
     height: var(--button-height);
+    border-radius: var(--button-border-radius);
     padding: 0 8px 0 16px;
     font-size: 1em;
     line-height: 1em;
@@ -174,19 +175,14 @@ main {
     background: field;
     cursor: pointer;
     white-space: nowrap;
-}
-
-.my-custom-select:open::part(button),
-.my-custom-select:open button {
-    background: field;
-}
-
-.my-custom-select::part(button),
-.my-custom-select button {
     border: none;
     background: none;
-    border-radius: var(--button-border-radius);
 }
+
+/* .my-custom-select:open::part(button),
+.my-custom-select:open button {
+    background: field;
+} */
 
 .outline .my-custom-select::part(button),
 .outline .my-custom-select button {
