@@ -21,7 +21,7 @@ html {
 body {
     margin: 0px;
     color: CanvasText;
-    background-color: Canvas;
+    background-color: #000;
     font-family: sans-serif;
 }
 
@@ -85,8 +85,8 @@ main {
 
 #toc {
     padding: var(--padding);
-    width: 192px;
-    background: #eee;
+    width: 280px;
+    background: #000;
     font-size: 1.5em;
 }
 
