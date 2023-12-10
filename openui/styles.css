@@ -54,12 +54,14 @@ p {
     margin-right: 2px;
 }
 .caption {
-    font-size: 1.5em;
+    /* font-size: 0.8em; */
     color: CanvasText;
 }
 
 .group .caption {
-    /* margin-bottom: calc(var(--padding) * 2); */
+    margin: 16px 0 16px 0;
+    /* border-top: 1px solid var(--color-border); */
+    /* margin: calc(var(--gap) * 2) 0; */
 }
 
 main {
@@ -112,9 +114,6 @@ main {
         "opsz" 48;
 }
 
-.group {
-}
-
 .title {
     font-weight: bold;
 }
@@ -131,7 +130,7 @@ main {
 
 .light,
 .dark {
-    padding: var(--padding);
+    padding: 0 var(--padding);
 }
 
 .light {
