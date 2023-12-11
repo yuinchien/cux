@@ -5,12 +5,14 @@
     --color-hover-light: rgba(179, 215, 255, 0.5);
     --color-hover-dark: #618cbe;
     --color-border: #ccc;
+    --color-border-dark: #5a5a5a;
     --shadow-light: 0 0 4px rgba(0, 0, 0, 0.25);
     --button-height: 40px;
     --button-border-radius: 20px;
     --option-height: 40px;
     --optgroup-indent: 8px;
     --listbox-border-radius: 8px;
+    --custom-button-face-dark: #606060;
 }
 
 body,
@@ -59,6 +61,7 @@ p {
 
 .group .caption {
     margin: 16px 0 16px 0;
+    display: none;
 }
 
 main {
@@ -127,7 +130,7 @@ main {
 
 .light,
 .dark {
-    padding: 0 var(--padding);
+    padding: var(--padding);
 }
 
 .light {
@@ -139,7 +142,7 @@ main {
     color-scheme: dark;
     background: black;
 
-    --color-border: #5a5a5a;
+    --color-border: var(--color-border-dark);
 }
 
 .light .my-custom-select option:hover:not([disabled]) {
@@ -167,7 +170,6 @@ main {
     font-size: 1em;
     line-height: 1em;
     display: flex;
-    background: field;
     cursor: pointer;
     white-space: nowrap;
     border: none;
@@ -191,6 +193,10 @@ main {
     border: none;
     background: buttonFace;
     border-radius: var(--button-border-radius);
+}
+.fill .dark .my-custom-select::part(button),
+.fill .dark .my-custom-select button {
+    background: var(--custom-button-face-dark);
 }
 
 .my-custom-select::part(selectedoption),
