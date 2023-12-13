@@ -86,10 +86,8 @@ main {
 }
 
 #toc {
-    /* padding: var(--padding); */
     width: 280px;
     background: #111;
-    /* font-size: 1.5em; */
     --tp-base-background-color: hsla(0, 0%, 10%, 0.8);
     --tp-base-shadow-color: hsla(0, 0%, 0%, 0.2);
     --tp-button-background-color: hsla(0, 0%, 80%, 1);
@@ -344,6 +342,17 @@ input[type="radio"] {
     gap: 8px;
     display: flex;
     align-items: center;
+}
+
+input[type="date"],
+input[type="month"],
+input[type="time"] {
+    height: 40px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-family: sans-serif;
+    padding-left: 16px;
 }
 
 @media (max-width: 720px) {
