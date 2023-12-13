@@ -2,6 +2,8 @@ import { Pane } from "https://cdn.jsdelivr.net/npm/tweakpane@4.0.1/dist/tweakpan
 
 const root = document.querySelector(":root");
 
+const toc = document.getElementById("toc");
+
 /* Tweakpane */
 const PARAMS = {
   button: {
@@ -17,7 +19,9 @@ const PARAMS = {
   },
 };
 
-const pane = new Pane();
+const pane = new Pane({
+  container: toc,
+});
 
 const folderContent = pane.addFolder({
   title: "preview",
