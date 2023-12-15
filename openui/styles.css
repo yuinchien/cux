@@ -5,14 +5,15 @@
     --color-hover-light: rgba(179, 215, 255, 0.5);
     --color-hover-dark: #618cbe;
     --color-border: #ccc;
-    --color-border-dark: #5a5a5a;
+    --color-border-dark: #505050;
     --shadow-light: 0 0 4px rgba(0, 0, 0, 0.25);
+    --shadow-dark: 0px -1px 8px 2px rgba(0, 0, 0, 0.25),
+        0px 1px 16px 2px rgba(0, 0, 0, 0.25);
     --button-height: 40px;
-    --button-border-radius: 20px;
+    --button-border-radius: 8px;
     --option-height: 40px;
     --optgroup-indent: 8px;
     --listbox-border-radius: 8px;
-    --custom-button-face-dark: #606060;
 }
 
 body,
@@ -130,7 +131,6 @@ main {
 .dark {
     color-scheme: dark;
     background: black;
-
     --color-border: var(--color-border-dark);
 }
 
@@ -152,23 +152,22 @@ main {
     height: var(--button-height);
     padding: 0 8px 0 16px;
     font-size: 1em;
-    line-height: 1em;
     display: flex;
     cursor: pointer;
     white-space: nowrap;
-    border: none;
     background: none;
-}
-
-.my-custom-select::part(button),
-.my-custom-select button {
-    border: 1px solid var(--color-border);
-    background: none;
+    border: 1px solid buttonBorder;
     border-radius: var(--button-border-radius);
 }
 
-#interoperable {
-    --button-border-radius: 8px;
+#chrome .my-custom-select::part(button),
+#chrome .my-custom-select button {
+    border-color: var(--color-border);
+    --button-border-radius: 20px;
+}
+#chrome .dark .my-custom-select::part(button),
+#chrome .dark .my-custom-select button {
+    border-color: var(--color-border-dark);
 }
 
 .my-custom-select::part(selectedoption),
@@ -207,53 +206,52 @@ main {
     padding: 0;
     border: none;
     box-shadow: var(--shadow-light);
-    z-index: 10000;
+}
+
+#chrome .dark .my-custom-select::part(listbox),
+#chrome .dark .my-custom-select listbox {
+    background-color: #2f2f2f;
 }
 
 .dark .my-custom-select::part(listbox),
 .dark .my-custom-select listbox {
-    box-shadow:
-        0 0 2px rgba(0, 0, 0, 0.25),
-        0 0 12px rgba(0, 0, 0, 0.35);
+    box-shadow: var(--shadow-dark);
 }
 
 .my-custom-select option {
     font-size: 1em;
-    line-height: 1em;
     height: var(--option-height);
-    padding: 0 40px 0 16px;
+    padding: 0 36px 0 16px;
     cursor: pointer;
     align-items: center;
     display: flex;
     gap: var(--gap);
 }
 
-.my-custom-select option:checked {
-    background: field;
-    color: fieldText;
-}
-.my-custom-select option:checked:after {
+.my-custom-select option:after {
     position: absolute;
     right: 8px;
-    content: "check";
+    content: "check_small";
     font-family: "Material Symbols Outlined";
     font-size: 24px;
     -webkit-font-feature-settings: "liga";
+    visibility: hidden;
+}
+.my-custom-select option:checked:after {
+    visibility: visible;
 }
 
 /* optgroup */
 .my-custom-select header {
     padding: 0 16px;
     font-weight: bold;
-    text-transform: uppercase;
     font-size: 0.6em;
+    text-transform: uppercase;
     letter-spacing: 0.05em;
-    height: calc(var(--option-height) * 0.6);
-    margin-top: 16px;
-}
-
-.my-custom-select.optgroup option {
-    /* text-indent: var(--optgroup-indent); */
+    height: 32px;
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
 }
 
 .dot {
@@ -270,51 +268,6 @@ main {
 }
 .dot.gray {
     background-color: grayText;
-}
-
-/* button */
-button {
-    height: 40px;
-    border-radius: 24px;
-    padding: 0 16px;
-    font-size: 1em;
-    border: none;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 4px;
-}
-
-.gap-8 {
-    gap: 8px;
-}
-
-input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-}
-input[type="radio"] {
-    width: 16px;
-    height: 16px;
-    margin-top: 0;
-    margin-left: 4px;
-}
-.container {
-    height: 32px;
-    gap: 8px;
-    display: flex;
-    align-items: center;
-}
-
-input[type="date"],
-input[type="month"],
-input[type="time"] {
-    height: 40px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    font-size: 1em;
-    font-family: sans-serif;
-    padding-left: 16px;
 }
 
 @media (max-width: 720px) {
