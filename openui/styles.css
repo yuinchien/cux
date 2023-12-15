@@ -86,29 +86,9 @@ main {
 }
 
 #toc {
-    width: 280px;
-    background: #111;
-    --tp-base-background-color: hsla(0, 0%, 10%, 0.8);
-    --tp-base-shadow-color: hsla(0, 0%, 0%, 0.2);
-    --tp-button-background-color: hsla(0, 0%, 80%, 1);
-    --tp-button-background-color-active: hsla(0, 0%, 100%, 1);
-    --tp-button-background-color-focus: hsla(0, 0%, 95%, 1);
-    --tp-button-background-color-hover: hsla(0, 0%, 85%, 1);
-    --tp-button-foreground-color: hsla(0, 0%, 0%, 0.8);
-    --tp-container-background-color: hsla(0, 0%, 0%, 0.3);
-    --tp-container-background-color-active: hsla(0, 0%, 0%, 0.6);
-    --tp-container-background-color-focus: hsla(0, 0%, 0%, 0.5);
-    --tp-container-background-color-hover: hsla(0, 0%, 0%, 0.4);
-    --tp-container-foreground-color: hsla(0, 0%, 100%, 0.5);
-    --tp-groove-foreground-color: hsla(0, 0%, 0%, 0.2);
-    --tp-input-background-color: hsla(0, 0%, 0%, 0.3);
-    --tp-input-background-color-active: hsla(0, 0%, 0%, 0.6);
-    --tp-input-background-color-focus: hsla(0, 0%, 0%, 0.5);
-    --tp-input-background-color-hover: hsla(0, 0%, 0%, 0.4);
-    --tp-input-foreground-color: hsla(0, 0%, 100%, 0.5);
-    --tp-label-foreground-color: hsla(0, 0%, 100%, 0.5);
-    --tp-monitor-background-color: hsla(0, 0%, 0%, 0.3);
-    --tp-monitor-foreground-color: hsla(0, 0%, 100%, 0.3);
+    width: 240px;
+    background: #f5f5f5;
+    padding: var(--padding);
 }
 
 #content {
@@ -138,10 +118,6 @@ main {
     color: FieldText;
 }
 
-#raw .demo {
-    column-gap: calc(var(--gap) * 2);
-}
-
 .light,
 .dark {
     padding: var(--padding);
@@ -159,17 +135,12 @@ main {
     --color-border: var(--color-border-dark);
 }
 
-.light .my-custom-select option:hover:not([disabled]) {
-    background-color: var(--color-hover-light);
+.my-custom-select option:hover:not([disabled]) {
+    background-color: buttonFace;
 }
 
 .dark .my-custom-select option:hover:not([disabled]) {
-    background-color: var(--color-hover-dark);
-    color: #111;
-}
-
-.dark .my-custom-select option:checked {
-    color: #111;
+    color: fieldText;
 }
 
 .my-custom-select {
@@ -190,27 +161,11 @@ main {
     background: none;
 }
 
-#raw .my-custom-select::part(button),
-#raw .my-custom-select button {
-    padding: 0;
-}
-
-.outline .my-custom-select::part(button),
-.outline .my-custom-select button {
+.my-custom-select::part(button),
+.my-custom-select button {
     border: 1px solid var(--color-border);
     background: none;
     border-radius: var(--button-border-radius);
-}
-
-.fill .my-custom-select::part(button),
-.fill .my-custom-select button {
-    border: none;
-    background: buttonFace;
-    border-radius: var(--button-border-radius);
-}
-.fill .dark .my-custom-select::part(button),
-.fill .dark .my-custom-select button {
-    background: var(--custom-button-face-dark);
 }
 
 .my-custom-select::part(selectedoption),
@@ -263,7 +218,7 @@ main {
     font-size: 1em;
     line-height: 1em;
     height: var(--option-height);
-    padding: 0 16px;
+    padding: 0 40px 0 16px;
     cursor: pointer;
     align-items: center;
     display: flex;
@@ -271,8 +226,16 @@ main {
 }
 
 .my-custom-select option:checked {
-    background: selectedItem;
-    color: SelectedItemText;
+    background: field;
+    color: fieldText;
+}
+.my-custom-select option:checked:after {
+    position: absolute;
+    right: 8px;
+    content: "check";
+    font-family: "Material Symbols Outlined";
+    font-size: 24px;
+    -webkit-font-feature-settings: "liga";
 }
 
 /* optgroup */
@@ -287,7 +250,7 @@ main {
 }
 
 .my-custom-select.optgroup option {
-    text-indent: var(--optgroup-indent);
+    /* text-indent: var(--optgroup-indent); */
 }
 
 .dot {
@@ -318,15 +281,11 @@ button {
     cursor: pointer;
     gap: 4px;
 }
-button:hover {
-    background-color: #e8e8e8;
-}
-.dark button {
-    background: var(--custom-button-face-dark);
-}
+
 .gap-8 {
     gap: 8px;
 }
+
 input[type="checkbox"] {
     width: 16px;
     height: 16px;

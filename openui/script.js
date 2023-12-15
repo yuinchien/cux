@@ -4,7 +4,20 @@ const root = document.querySelector(":root");
 
 const toc = document.getElementById("toc");
 
-/* Tweakpane */
+const demos = document.querySelectorAll(".demo");
+
+const updateExamples = (templateName) => {
+  const template = document.getElementById(`template-${templateName}`);
+  demos.forEach((demo) => {
+    demo.innerHTML = "";
+    const clone = template.content.cloneNode(true);
+    demo.appendChild(clone);
+  });
+};
+
+updateExamples("all");
+
+/*
 const PARAMS = {
   button: {
     corner: 20,
@@ -113,16 +126,4 @@ folderListbox
     console.log(`change: ${ev.value}`);
     root.style.setProperty("--option-height", `${ev.value}px`);
   });
-
-const demos = document.querySelectorAll(".demo");
-
-const updateExamples = (templateName) => {
-  const template = document.getElementById(`template-${templateName}`);
-  demos.forEach((demo) => {
-    demo.innerHTML = "";
-    const clone = template.content.cloneNode(true);
-    demo.appendChild(clone);
-  });
-};
-
-updateExamples("all");
+  */
