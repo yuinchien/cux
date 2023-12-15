@@ -60,8 +60,7 @@ p {
 }
 
 .group .caption {
-    margin: 16px 0 16px 0;
-    display: none;
+    margin: 0 0 var(--padding) 0;
 }
 
 main {
@@ -166,6 +165,10 @@ main {
     border: 1px solid var(--color-border);
     background: none;
     border-radius: var(--button-border-radius);
+}
+
+#interoperable {
+    --button-border-radius: 8px;
 }
 
 .my-custom-select::part(selectedoption),
