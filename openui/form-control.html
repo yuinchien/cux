@@ -13,6 +13,12 @@
 
     <body>
         <template id="template">
+            <input type="text" value="123" disabled />
+            <input type="password" />
+            <textarea id="w3review" name="w3review" rows="4" cols="50">
+At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.</textarea
+            >
+
             <input
                 type="date"
                 id="start"
@@ -152,17 +158,21 @@
                 <option selected>100%</option>
                 <option>200%</option>
             </selectlist>
+
+            <selectlist>
+                <option>50%</option>
+                <option selected>100%</option>
+                <option>200%</option>
+            </selectlist>
         </template>
 
         <main class="row">
             <div id="content" class="column flex">
                 <div class="row group flex outline" id="outline">
                     <div class="light flex">
-                        <!-- <div class="caption">Outline ⁄ Light</div> -->
                         <div class="elements"></div>
                     </div>
                     <div class="dark flex">
-                        <!-- <div class="caption">Outline ⁄ Dark</div> -->
                         <div class="elements"></div>
                     </div>
                 </div>
@@ -172,6 +182,7 @@
             const demos = document.querySelectorAll(".elements");
 
             const updateExamples = () => {
+                console.log("updateExamples", demos);
                 const template = document.getElementById("template");
                 demos.forEach((demo) => {
                     demo.innerHTML = "";

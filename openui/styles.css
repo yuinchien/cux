@@ -1,19 +1,19 @@
 :root {
-    --border-radius: 8px;
     --padding: 24px;
     --gap: 8px;
-    --color-hover-light: rgba(179, 215, 255, 0.5);
-    --color-hover-dark: #618cbe;
-    --color-border: #ccc;
-    --color-border-dark: #505050;
+
     --shadow-light: 0 0 4px rgba(0, 0, 0, 0.25);
     --shadow-dark: 0px -1px 8px 2px rgba(0, 0, 0, 0.25),
         0px 1px 16px 2px rgba(0, 0, 0, 0.25);
-    --button-height: 40px;
-    --button-border-radius: 8px;
-    --option-height: 40px;
-    --optgroup-indent: 8px;
+
     --listbox-border-radius: 8px;
+    --button-border-radius: 8px;
+    --button-height: 40px;
+    --option-height: 40px;
+
+    --chrome-border-light: #ccc;
+    --chrome-border-dark: #505050;
+    --chrome-field-dark: #2c2c2c;
 }
 
 body,
@@ -30,6 +30,10 @@ body {
 
 * {
     box-sizing: border-box;
+}
+
+.color {
+    height: 80px;
 }
 
 .material-symbols-outlined {
@@ -155,19 +159,20 @@ main {
     display: flex;
     cursor: pointer;
     white-space: nowrap;
-    background: none;
+    background: field;
     border: 1px solid buttonBorder;
     border-radius: var(--button-border-radius);
 }
 
 #chrome .my-custom-select::part(button),
 #chrome .my-custom-select button {
-    border-color: var(--color-border);
+    border-color: var(--chrome-border-light);
     --button-border-radius: 20px;
 }
 #chrome .dark .my-custom-select::part(button),
 #chrome .dark .my-custom-select button {
-    border-color: var(--color-border-dark);
+    border-color: var(--chrome-border-dark);
+    background: var(--chrome-field-dark);
 }
 
 .my-custom-select::part(selectedoption),
@@ -210,7 +215,7 @@ main {
 
 #chrome .dark .my-custom-select::part(listbox),
 #chrome .dark .my-custom-select listbox {
-    background-color: #2f2f2f;
+    background-color: var(--chrome-field-dark);
 }
 
 .dark .my-custom-select::part(listbox),
