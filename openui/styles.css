@@ -14,6 +14,8 @@
     --chrome-border-light: #ccc;
     --chrome-border-dark: #505050;
     --chrome-field-dark: #2c2c2c;
+    --chrome-hover-light: #f0f0f0;
+    --chrome-hover-dark: #444;
 }
 
 body,
@@ -141,6 +143,12 @@ main {
 .my-custom-select option:hover:not([disabled]) {
     background-color: buttonFace;
 }
+#chrome .light .my-custom-select option:hover:not([disabled]) {
+    background-color: var(--chrome-hover-light);
+}
+#chrome .dark .my-custom-select option:hover:not([disabled]) {
+    background-color: var(--chrome-hover-dark);
+}
 
 .dark .my-custom-select option:hover:not([disabled]) {
     color: fieldText;
@@ -247,16 +255,20 @@ main {
 }
 
 /* optgroup */
-.my-custom-select header {
-    padding: 0 16px;
-    font-weight: bold;
-    font-size: 0.6em;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    margin-top: 4px;
+.my-custom-select .optgroup {
+    padding: 4px 0;
+    border-bottom: 1px solid buttonBorder;
+}
+.my-custom-select .optgroup:last-child {
+    border-bottom: none;
+}
+#chrome .light .my-custom-select .optgroup {
+    padding: 4px 0;
+    border-bottom: 1px solid var(--chrome-border-light);
+}
+#chrome .dark .my-custom-select .optgroup {
+    padding: 4px 0;
+    border-bottom: 1px solid var(--chrome-border-dark);
 }
 
 .dot {

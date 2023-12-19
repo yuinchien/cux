@@ -6,8 +6,8 @@ const toc = document.getElementById("toc");
 
 const demos = document.querySelectorAll(".demo");
 
-const updateExamples = (templateName) => {
-  const template = document.getElementById(`template-${templateName}`);
+const init = () => {
+  const template = document.getElementById(`template`);
   demos.forEach((demo) => {
     demo.innerHTML = "";
     const clone = template.content.cloneNode(true);
@@ -15,7 +15,7 @@ const updateExamples = (templateName) => {
   });
 };
 
-updateExamples("all");
+init();
 
 /*
 const PARAMS = {
