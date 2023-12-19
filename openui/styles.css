@@ -3,8 +3,8 @@
     --gap: 8px;
 
     --shadow-light: 0 0 4px rgba(0, 0, 0, 0.25);
-    --shadow-dark: 0px -1px 8px 2px rgba(0, 0, 0, 0.25),
-        0px 1px 16px 2px rgba(0, 0, 0, 0.25);
+    --shadow-dark: 0px -1px 8px 2px rgba(0, 0, 0, 0.15),
+        0px 1px 12px 2px rgba(0, 0, 0, 0.2);
 
     --listbox-border-radius: 8px;
     --button-border-radius: 8px;
