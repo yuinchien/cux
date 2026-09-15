@@ -18,6 +18,10 @@
     --chrome-hover-dark: #444;
 }
 
+select, ::picker(select) {
+  appearance: base-select;
+}
+
 body,
 html {
     height: 100%;
@@ -159,40 +163,36 @@ main {
     line-height: 1em;
 }
 
-.my-custom-select::part(button),
 .my-custom-select button {
     height: var(--button-height);
-    padding: 0 8px 0 16px;
+    padding: 0 8px 0 8px;
     font-size: 1em;
     display: flex;
     cursor: pointer;
     white-space: nowrap;
-    background: field;
-    border: 1px solid buttonBorder;
-    border-radius: var(--button-border-radius);
+    /*background: field;*/
+    /*border: 1px solid buttonBorder;*/
+    /*border-radius: var(--button-border-radius);*/
 }
 
-#chrome .my-custom-select::part(button),
 #chrome .my-custom-select button {
     border-color: var(--chrome-border-light);
     --button-border-radius: 20px;
 }
-#chrome .dark .my-custom-select::part(button),
 #chrome .dark .my-custom-select button {
-    border-color: var(--chrome-border-dark);
-    background: var(--chrome-field-dark);
+    /*border-color: var(--chrome-border-dark);*/
+    /*background: var(--chrome-field-dark);*/
 }
 
-.my-custom-select::part(selectedoption),
-.my-custom-select selectedoption {
+.my-custom-select selectedcontent {
     align-self: center;
     align-items: center;
     display: flex;
     gap: var(--gap);
 }
 
-.my-custom-select::part(marker),
-.my-custom-select marker {
+.my-custom-select::picker-icon {
+    content: "";
     width: 24px;
     height: 24px;
     margin-left: calc(var(--gap) / 2);
@@ -202,18 +202,15 @@ main {
     background-position: center center;
 }
 
-.dark .my-custom-select::part(marker),
-.dark .my-custom-select marker {
+.dark .my-custom-select::picker-icon {
     background-image: url(arrow_drop_down_white.svg);
 }
 
-.my-custom-select:open::part(marker),
-.my-custom-select:open marker {
+.my-custom-select:open::picker-icon {
     transform: scaleY(-1);
 }
 
-.my-custom-select::part(listbox),
-.my-custom-select listbox {
+.my-custom-select::picker(select) {
     background-color: Field;
     border-radius: var(--listbox-border-radius);
     padding: 0;
@@ -221,52 +218,46 @@ main {
     box-shadow: var(--shadow-light);
 }
 
-#chrome .dark .my-custom-select::part(listbox),
-#chrome .dark .my-custom-select listbox {
+#chrome .dark .my-custom-select::picker(select) {
     background-color: var(--chrome-field-dark);
 }
 
-.dark .my-custom-select::part(listbox),
-.dark .my-custom-select listbox {
+.dark .my-custom-select::picker(select) {
     box-shadow: var(--shadow-dark);
 }
 
 .my-custom-select option {
     font-size: 1em;
     height: var(--option-height);
-    padding: 0 36px 0 16px;
+    padding: 0 16px;
     cursor: pointer;
     align-items: center;
     display: flex;
     gap: var(--gap);
 }
 
-.my-custom-select option:after {
-    position: absolute;
-    right: 8px;
+.my-custom-select option::checkmark {
     content: "check_small";
     font-family: "Material Symbols Outlined";
     font-size: 24px;
     -webkit-font-feature-settings: "liga";
-    visibility: hidden;
-}
-.my-custom-select option:checked:after {
-    visibility: visible;
+    order: 1;
+    margin-left: auto;
 }
 
 /* optgroup */
-.my-custom-select .optgroup {
+.my-custom-select optgroup {
     padding: 4px 0;
     border-bottom: 1px solid buttonBorder;
 }
-.my-custom-select .optgroup:last-child {
+.my-custom-select optgroup:last-child {
     border-bottom: none;
 }
-#chrome .light .my-custom-select .optgroup {
+#chrome .light .my-custom-select optgroup {
     padding: 4px 0;
     border-bottom: 1px solid var(--chrome-border-light);
 }
-#chrome .dark .my-custom-select .optgroup {
+#chrome .dark .my-custom-select optgroup {
     padding: 4px 0;
     border-bottom: 1px solid var(--chrome-border-dark);
 }
