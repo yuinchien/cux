@@ -163,25 +163,25 @@ main {
     line-height: 1em;
 }
 
-.my-custom-select button {
+.my-custom-select {
     height: var(--button-height);
-    padding: 0 8px 0 8px;
+    padding: 0 8px 0 16px;
     font-size: 1em;
     display: flex;
     cursor: pointer;
     white-space: nowrap;
-    /*background: field;*/
-    /*border: 1px solid buttonBorder;*/
-    /*border-radius: var(--button-border-radius);*/
+    background: field;
+    border: 1px solid buttonBorder;
+    border-radius: var(--button-border-radius);
 }
 
-#chrome .my-custom-select button {
+#chrome .my-custom-select {
     border-color: var(--chrome-border-light);
-    --button-border-radius: 20px;
+    border-radius: 40px;
 }
-#chrome .dark .my-custom-select button {
-    /*border-color: var(--chrome-border-dark);*/
-    /*background: var(--chrome-field-dark);*/
+#chrome .dark .my-custom-select {
+    border-color: var(--chrome-border-dark);
+    background: var(--chrome-field-dark);
 }
 
 .my-custom-select selectedcontent {
